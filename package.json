@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "dev": "concurrently -n server,client -c magenta,cyan \"npm run dev -w server\" \"npm run dev -w client\"",
-    "build": "npm run build -w server && npm run build -w client",
+    "postinstall": "node server/scripts/fix-helmet-types.mjs",
+    "build": "node server/scripts/fix-helmet-types.mjs && npm run build -w server && npm run build -w client",
     "lint": "npm run lint -w server && npm run lint -w client",
     "typecheck": "npm run typecheck -w server && npm run typecheck -w client",
     "test": "npm run test -w server && npm run test -w client"
