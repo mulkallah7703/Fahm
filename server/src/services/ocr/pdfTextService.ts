@@ -1,9 +1,8 @@
-import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
-
 export async function extractPdfFirstPage(buffer: Buffer): Promise<{
   pageCount: number;
   text: string;
 }> {
+  const { getDocument } = await import("pdfjs-dist/legacy/build/pdf.mjs");
   const task = getDocument({
     data: new Uint8Array(buffer),
     useSystemFonts: true,
