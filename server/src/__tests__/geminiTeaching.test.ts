@@ -283,6 +283,7 @@ describe("gemini teaching engine", () => {
       mode: "focus",
       variant: "concise",
       state: null,
+      generate: async () => null,
     });
     expect(composed.content.teachingVersion).toBe(5);
     expect(composed.content.mainIdea).not.toMatch(/LIAN|celSa|NOLL/);
