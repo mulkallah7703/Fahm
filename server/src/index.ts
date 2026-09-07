@@ -1,12 +1,10 @@
-import { createApp } from "./app.js";
+import app from "./app.js";
 import { env } from "./config/env.js";
-import { closePool, getPool } from "./config/database.js";
+import { closePool } from "./config/database.js";
 import { shutdownOcr } from "./services/ocr/ocrService.js";
 import { logger } from "./utils/logger.js";
 
 async function main(): Promise<void> {
-  await getPool();
-  const app = createApp();
   const server = app.listen(env.port, () => {
     logger.info("server_started", { port: env.port, env: env.nodeEnv });
   });
