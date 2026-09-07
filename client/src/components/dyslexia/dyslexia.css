@@ -1,0 +1,156 @@
+.dyslexia-wrap {
+  overflow-x: hidden;
+  letter-spacing: normal;
+}
+
+.dyslexia-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  gap: 20px;
+  align-items: start;
+}
+
+.dyslexia-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.dyslexia-header h1 {
+  margin: 0;
+}
+
+.reading-column {
+  max-width: 46rem;
+}
+
+.reading-board {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.reading-line {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  background: transparent;
+  text-align: start;
+  cursor: pointer;
+}
+
+.reading-line:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.reading-line.current {
+  color: var(--text);
+  background: var(--accent-soft);
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--focus);
+}
+
+.reading-line .concept-mark {
+  border-bottom: 2px dotted var(--accent);
+}
+
+.reading-controls,
+.setting-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.reading-controls .btn {
+  min-height: 48px;
+}
+
+.vocab-chip {
+  border: 1px solid var(--line);
+  background: #12131c;
+  color: inherit;
+  border-radius: 999px;
+  min-height: 40px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.vocab-chip.selected {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.setting-chip {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: inherit;
+  border-radius: 10px;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+}
+
+.setting-chip.selected {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.switch-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  min-height: 44px;
+}
+
+.reading-kicker {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+}
+
+.settings-group {
+  margin-bottom: 16px;
+}
+
+.settings-group h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.reading-footer {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  border: 1px solid var(--line-strong);
+}
+
+.note-box {
+  margin-top: 10px;
+}
+
+.font-small { font-size: 1.05rem; }
+.font-medium { font-size: 1.25rem; }
+.font-large { font-size: 1.5rem; }
+
+@media (max-width: 1100px) {
+  .dyslexia-page,
+  .dyslexia-header {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reading-line,
+  .reading-line.current {
+    transition: none;
+  }
+}

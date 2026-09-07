@@ -1,0 +1,17 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*.local
+server/storage/uploads
+server/storage/tmp
+coverage
+*.log
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+*.tsbuildinfo
+client/dist
+server/dist

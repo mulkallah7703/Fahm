@@ -1,0 +1,125 @@
+.verify-wrap {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.verify-page {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr) minmax(220px, 260px);
+  gap: 18px;
+  align-items: start;
+}
+
+.verify-question {
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line-strong);
+}
+
+.verify-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-card {
+  min-height: 52px;
+  min-width: 0;
+  width: 100%;
+  text-align: start;
+  border: 1px solid var(--line);
+  background: #12131c;
+  color: inherit;
+  border-radius: 14px;
+  padding: 12px 14px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.option-card.selected {
+  border-color: var(--accent);
+  box-shadow: var(--focus);
+}
+
+.option-card.correct {
+  border-color: var(--success);
+}
+
+.option-card.incorrect {
+  border-color: var(--warning);
+}
+
+.option-state {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
+
+.nav-item,
+.evidence-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  min-height: 40px;
+}
+
+.nav-item.current {
+  border-inline-start: 3px solid var(--accent);
+  padding-inline-start: 8px;
+}
+
+.mastery-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  width: 100%;
+}
+
+.mastery-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+.verify-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.verify-actions .btn {
+  min-height: 48px;
+}
+
+.verify-dyslexia .verify-question {
+  line-height: 2.1;
+  font-size: 1.2rem;
+}
+
+.verify-focus .verify-question p {
+  max-width: 42rem;
+}
+
+@media (max-width: 1100px) {
+  .verify-page {
+    grid-template-columns: 1fr;
+  }
+
+  .verify-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .verify-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option-card,
+  .mastery-fill {
+    transition: none;
+  }
+}

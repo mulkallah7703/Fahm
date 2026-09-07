@@ -1,0 +1,130 @@
+.adaptive-wrap {
+  overflow-x: hidden;
+}
+
+.adaptive-page {
+  display: grid;
+  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.insight-banner {
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--line-strong);
+  background: var(--accent-soft);
+}
+
+.insight-why {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 12px 0 0;
+}
+
+.insight-why dt {
+  color: var(--text-muted);
+}
+
+.adapted-now {
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line-strong);
+  background: #12131c;
+}
+
+.adapted-now h2 {
+  margin: 0 0 8px;
+}
+
+.adapted-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.adapted-compare section {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+}
+
+.strategy-ladder ol,
+.evidence-card ul,
+.adaptive-history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.strategy-step {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.strategy-dot {
+  width: 12px;
+  height: 12px;
+  margin-top: 6px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  flex: 0 0 auto;
+}
+
+.strategy-step.current .strategy-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.strategy-step.past .strategy-dot {
+  background: #6b7280;
+  border-color: #6b7280;
+}
+
+.strategy-step.unavailable {
+  color: var(--text-muted);
+}
+
+.evidence-card li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 40px;
+  align-items: center;
+}
+
+.adaptive-actions {
+  margin-top: 18px;
+}
+
+.adaptive-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adaptive-action-row .btn {
+  min-height: 48px;
+}
+
+.adaptive-profile {
+  margin-top: 16px;
+}
+
+@media (max-width: 1100px) {
+  .adaptive-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .insight-banner,
+  .adapted-now {
+    transition: none;
+  }
+}

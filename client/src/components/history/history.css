@@ -1,0 +1,274 @@
+.history-page {
+  overflow-x: hidden;
+}
+
+.history-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 18px;
+  align-items: start;
+}
+
+.history-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.history-header h1 {
+  margin: 0;
+}
+
+.history-kicker {
+  color: var(--accent);
+  font-family: var(--font-en);
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.history-subtitle {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.history-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+.history-search {
+  flex: 1 1 240px;
+  min-height: 44px;
+}
+
+.history-search input {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-card);
+  color: var(--text);
+  padding: 0 14px;
+}
+
+.history-search input:focus {
+  outline: none;
+  box-shadow: var(--focus);
+}
+
+.history-filters {
+  display: inline-flex;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.history-filters button {
+  min-height: 44px;
+  min-width: 88px;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0 16px;
+}
+
+.history-filters button[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+}
+
+.history-section {
+  margin-bottom: 22px;
+}
+
+.history-section h2 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 72px;
+  padding: 14px 16px;
+  text-align: right;
+  color: inherit;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.history-item[aria-current="true"] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-glow);
+}
+
+.history-item h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.history-item p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.history-item-side {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.history-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.history-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-dim);
+}
+
+.history-dot.good { background: var(--success); }
+.history-dot.warn { background: var(--warning); }
+.history-dot.bad { background: var(--danger); }
+.history-dot.dim { background: var(--text-dim); }
+
+.history-thumb {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #2a2c3c;
+  flex-shrink: 0;
+}
+
+.history-details {
+  position: sticky;
+  top: 16px;
+  padding: 18px;
+}
+
+.history-details h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.history-details .muted {
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+.history-timeline {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  counter-reset: history-step;
+}
+
+.history-timeline li {
+  position: relative;
+  padding-inline-start: 28px;
+  margin-bottom: 12px;
+  min-height: 32px;
+}
+
+.history-timeline li::before {
+  counter-increment: history-step;
+  content: counter(history-step);
+  position: absolute;
+  inset-inline-start: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history-result {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.history-concept {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 36px;
+}
+
+.history-concept-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.history-actions .btn {
+  min-height: 44px;
+  width: 100%;
+}
+
+.history-more {
+  margin-top: 12px;
+  width: 100%;
+  min-height: 44px;
+}
+
+@media (max-width: 980px) {
+  .history-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .history-details {
+    position: static;
+  }
+
+  .history-item,
+  .history-search input,
+  .history-filters button,
+  .history-actions .btn {
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .history-item {
+    transition: none;
+  }
+}

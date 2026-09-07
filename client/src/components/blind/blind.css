@@ -1,0 +1,169 @@
+.blind-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  gap: 20px;
+  align-items: start;
+}
+
+.blind-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.blind-header h1 {
+  margin: 0;
+}
+
+.blind-player {
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.player-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.progress-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 48px;
+  flex: 1;
+}
+
+.progress-bars span {
+  width: 8px;
+  border-radius: 999px;
+  background: rgba(139, 124, 246, 0.28);
+  display: block;
+}
+
+.progress-bars span.active {
+  background: var(--accent);
+}
+
+.player-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.player-btn {
+  width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+}
+
+.player-btn.primary {
+  width: 64px;
+  min-height: 64px;
+}
+
+.player-meta,
+.player-settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.speed-chip,
+.voice-chip {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  min-height: 40px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.speed-chip.selected,
+.voice-chip.selected {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.narration-card {
+  padding: 22px;
+  margin-bottom: 14px;
+}
+
+.now-reading {
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.narration-text {
+  font-size: 1.35rem;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.narration-text mark {
+  background: rgba(139, 124, 246, 0.18);
+  color: inherit;
+  border-radius: 6px;
+}
+
+.narration-detail {
+  color: var(--text-muted);
+  margin-top: 14px;
+}
+
+.blind-actions,
+.command-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.command-btn,
+.option-card {
+  min-height: 48px;
+}
+
+.shortcuts,
+.live-region {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.shortcuts dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 12px;
+}
+
+.shortcuts dt {
+  font-family: var(--font-en);
+}
+
+.blind-preview {
+  margin-top: 12px;
+}
+
+.blind-large {
+  font-size: 1.15em;
+}
+
+@media (max-width: 1100px) {
+  .blind-page,
+  .blind-header,
+  .player-row {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bars span,
+  .narration-text mark {
+    transition: none;
+  }
+}

@@ -1,0 +1,34 @@
+:root {
+  --bg: #0c0d14;
+  --bg-elevated: #12131c;
+  --bg-card: #161722;
+  --bg-card-hover: #1b1c2a;
+  --bg-sidebar: #10111a;
+  --line: rgba(155, 140, 230, 0.16);
+  --line-strong: rgba(155, 140, 230, 0.38);
+  --accent: #8b7cf6;
+  --accent-strong: #7a6af0;
+  --accent-soft: rgba(139, 124, 246, 0.14);
+  --accent-glow: rgba(139, 124, 246, 0.22);
+  --text: #f4f2fb;
+  --text-muted: #9a97ab;
+  --text-dim: #6f6d80;
+  --success: #5dcea3;
+  --warning: #e6c25a;
+  --danger: #ef6d86;
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  --sidebar-width: 248px;
+  --insights-width: 300px;
+  --font: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-en: "Outfit", "IBM Plex Sans Arabic", sans-serif;
+  --focus: 0 0 0 3px rgba(139, 124, 246, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion: 0;
+  }
+}
